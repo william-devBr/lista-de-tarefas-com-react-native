@@ -8,7 +8,12 @@ import {useState, useEffect} from "react";
 import { Ionicons } from "@expo/vector-icons";
 import  server  from '../server';
 
-export default function TaskScreen({route}: any) {
+/** 
+ * TaskScreen: Este componente exibe os detalhes de uma tarefa específica.
+ * Ele permite marcar a tarefa como completa, editá-la ou excluí-la.
+*/
+
+export default function TaskScreen({route, navigation}: any) {
     const {tarefa, setUpdate} = route.params;
     const [tarefaAtualizada, setTarefaAtualizada] = useState<boolean>(tarefa.complete);
     const [modalVisible, setModalVisible] = useState<boolean>(false);
@@ -47,6 +52,16 @@ export default function TaskScreen({route}: any) {
       setModalVisible(false);
 
     }
+
+    const excluirTarefa = async ({id}: any) => {
+      await fetch(`http://${server.host}:${server.port}/tasks/d/${id}`, {
+        method: 'DELETE',
+      });
+      setUpdate((prev: boolean) => !prev);
+      navigation.goBack();
+
+      alert('Tarefa excluída com sucesso!');
+    }
     
     useEffect(()=> {
         setTarefaAtualizada(tarefa.complete);
@@ -74,7 +89,7 @@ export default function TaskScreen({route}: any) {
                 </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => alert('Tarefa excluída!')} style={{backgroundColor: '#dc3545', padding: 10, borderRadius: 5, marginTop: 20}}>
+            <TouchableOpacity onPress={() => excluirTarefa(tarefa)} style={{backgroundColor: '#dc3545', padding: 10, borderRadius: 5, marginTop: 20}}>
                 <Text style={{color: '#fff', textAlign: 'center'}}>
                     <Ionicons name="trash-outline" size={20} color="#fff" /> Excluir Tarefa
                 </Text>

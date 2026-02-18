@@ -6,7 +6,11 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../screens/HomeScreen";
 import TaskScreen from "../screens/TaskScreen";
 
-
+/**
+ * AppRoutes : Este componente define a estrutura de navegação do aplicativo.
+ * Ele configura um stack navigator com duas telas: Home e Task.
+ * Cada tela tem estilos de cabeçalho personalizados para uma aparência consistente.
+ */
 const Stack = createNativeStackNavigator();
 
 export default function AppRoutes() {

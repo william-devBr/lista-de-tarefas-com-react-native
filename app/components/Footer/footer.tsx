@@ -3,6 +3,11 @@ import { View, Text,StyleSheet } from 'react-native';
 import IconButton from '../../ui/icon-button';
 import AntDesign from '@expo/vector-icons/AntDesign';
 
+/**
+ * Componente de Rodapé
+ * @returns 
+ */
+
 export default function Footer() {
     return(
         <View style={styles.container}>

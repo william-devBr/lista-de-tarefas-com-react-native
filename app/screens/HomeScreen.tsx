@@ -3,6 +3,10 @@ import { View, Text, FlatList, TouchableOpacity, TextInput } from "react-native"
 import {useState, useEffect} from "react";
 import server from '../server';
 
+/**
+ * HomeScreen: Este componente exibe a lista de tarefas e permite adicionar novas tarefas.
+ */
+
 export default function HomeScreen({navigation}: any) {
     
      const [tasks, setTasks] = useState<string[]>([]);
@@ -73,6 +77,9 @@ export default function HomeScreen({navigation}: any) {
                  <Text style={{color: '#fff', textAlign: 'center'}}>Adicionar Tarefa</Text>
              </TouchableOpacity>
             {/* Lista as tarefas adicionadas */}
+            {tasks.length === 0 ? (
+                <Text style={{fontSize: 16, color: '#777'}}>Nenhuma tarefa encontrada. Adicione uma nova tarefa!</Text>
+            ) : (
             <FlatList
                 data={tasks as any[]}
                 keyExtractor={(item, index) => index.toString()}
@@ -83,9 +90,9 @@ export default function HomeScreen({navigation}: any) {
                     </TouchableOpacity>
                 )}
             />
+             )}
          </View>
        
-
     )
 
 }

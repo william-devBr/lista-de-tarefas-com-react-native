@@ -6,6 +6,11 @@ interface Ipropsinterface {
     title: string;
 }
 
+/**
+ * Componente de Cabeçalho
+ * @returns;
+ */
+
 export default function Header(props: Ipropsinterface) {
     return(
         <View style={styles.container}>

@@ -5,12 +5,16 @@ import Main from "./pages/main";
 import Footer from "./components/Footer/footer";
 import AppRoutes from "./routes/AppRoutes";
 
+/**
+ * App: Componente principal do aplicativo.
+ * @returns Componente de aplicativo.
+ */
+
 
 export default function App() { 
     return(
         <SafeAreaProvider>
             <SafeAreaView>
-                {/* <Header title="Meu Bairro" /> */}
                 <AppRoutes />
                 <Footer />
             </SafeAreaView>
