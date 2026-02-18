@@ -1,5 +1,5 @@
 {
-  "name": "lista=de-tarefas",
+  "name": "lista-de-tarefas",
   "main": "app/index.tsx",
   "version": "1.0.0",
   "scripts": {
