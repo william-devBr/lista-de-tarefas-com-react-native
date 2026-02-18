@@ -13,7 +13,6 @@ Aplicativo mobile de lista de tarefas (To-Do List) desenvolvido com React Native
 - ✏️ Editar tarefas existentes
 - ✔️ Marcar tarefas como concluídas/pendentes
 - 🗑️ Excluir tarefas
-- 💾 Persistência de dados local (AsyncStorage)
 
 ## 🚀 Tecnologias Utilizadas
 
