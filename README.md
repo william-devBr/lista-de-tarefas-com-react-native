@@ -42,4 +42,4 @@ Antes de começar, você precisará ter instalado em sua máquina:
 git clone https://github.com/william-devBr/lista-de-tarefas-com-react-native.git
 cd lista-de-tarefas-com-react-native
 
-npm start  #expo start
+npm start | expo start
